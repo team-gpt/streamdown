@@ -708,9 +708,9 @@ MemoImg.displayName = "MarkdownImg";
 type ParagraphProps = WithNode<JSX.IntrinsicElements["p"]>;
 const MemoParagraph = memo<ParagraphProps>(
   ({ children, className, node, ...props }: ParagraphProps) => {
-    // Check if the paragraph contains only an image element
-    // If so, render the image directly without the <p> wrapper to avoid hydration errors
-    // (since our ImageComponent returns a <div>, which cannot be nested inside <p>)
+    // Check if the paragraph contains only an image or code block element
+    // If so, render it directly without the <p> wrapper to avoid hydration errors
+    // (since ImageComponent/CodeBlock use <div>/<pre>, which cannot be nested inside <p>)
 
     // Handle both array and single child cases
     const childArray = Array.isArray(children) ? children : [children];
@@ -720,14 +720,15 @@ const MemoParagraph = memo<ParagraphProps>(
       (child) => child !== null && child !== undefined && child !== ""
     );
 
-    // Check if there's exactly one child and it's an img element
+    // Check if there's exactly one child and it's an img or code element
     if (
       validChildren.length === 1 &&
-      isValidElement(validChildren[0]) &&
-      (validChildren[0].props as { node?: MarkdownNode }).node?.tagName ===
-        "img"
+      isValidElement(validChildren[0])
     ) {
-      return <>{children}</>;
+      const tagName = (validChildren[0].props as { node?: MarkdownNode }).node?.tagName;
+      if (tagName === "img" || tagName === "code") {
+        return <>{children}</>;
+      }
     }
 
     return (
