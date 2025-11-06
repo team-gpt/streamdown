@@ -7,6 +7,52 @@ settings:
 importers:
 
   .:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      katex:
+        specifier: ^0.16.22
+        version: 0.16.22
+      lucide-react:
+        specifier: ^0.542.0
+        version: 0.542.0(react@19.1.1)
+      marked:
+        specifier: ^16.2.1
+        version: 16.2.1
+      mermaid:
+        specifier: ^11.11.0
+        version: 11.11.0
+      react:
+        specifier: ^18.0.0 || ^19.0.0
+        version: 19.1.1
+      react-markdown:
+        specifier: ^10.1.0
+        version: 10.1.0(@types/react@19.1.12)(react@19.1.1)
+      react-shiki:
+        specifier: ^0.9.0
+        version: 0.9.0(@types/react-dom@19.1.9(@types/react@19.1.12))(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      rehype-harden:
+        specifier: ^1.1.5
+        version: 1.1.5
+      rehype-katex:
+        specifier: ^7.0.1
+        version: 7.0.1
+      rehype-raw:
+        specifier: ^7.0.0
+        version: 7.0.0
+      remark-gfm:
+        specifier: ^4.0.1
+        version: 4.0.1
+      remark-math:
+        specifier: ^6.0.0
+        version: 6.0.0
+      shiki:
+        specifier: ^3.12.2
+        version: 3.12.2
+      tailwind-merge:
+        specifier: ^3.3.1
+        version: 3.3.1
     devDependencies:
       '@biomejs/biome':
         specifier: 2.2.4
@@ -97,7 +143,7 @@ importers:
         version: 2.0.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       streamdown:
         specifier: workspace:*
-        version: link:../../packages/streamdown
+        version: link:../..
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -179,7 +225,7 @@ importers:
         version: 3.12.2
       streamdown:
         specifier: workspace:*
-        version: link:../../packages/streamdown
+        version: link:../..
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -6362,7 +6408,7 @@ snapshots:
       chai: 5.2.1
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.2.4(vite@7.1.2(@types/node@24.3.0)(jiti@2.5.1)(lightningcss@1.30.1)(tsx@4.20.4))':
+  '@vitest/mocker@3.2.4(vite@7.1.2(@types/node@24.3.0))':
     dependencies:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
@@ -8939,7 +8985,7 @@ snapshots:
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(vite@7.1.2(@types/node@24.3.0)(jiti@2.5.1)(lightningcss@1.30.1)(tsx@4.20.4))
+      '@vitest/mocker': 3.2.4(vite@7.1.2(@types/node@24.3.0))
       '@vitest/pretty-format': 3.2.4
       '@vitest/runner': 3.2.4
       '@vitest/snapshot': 3.2.4
